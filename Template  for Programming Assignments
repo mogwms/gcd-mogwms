@@ -1,0 +1,132 @@
+Template to be followed for Programming Assignments from now to get MAX points, (By using the rubric for the programming assignment)
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Here we have a example implementing the boolean flag and rubric template 
+
+A flag-controlled while loop in Java uses a boolean variable, often referred to as a "flag," to manage the loop's execution. This flag variable acts as a signal, indicating whether the loop should continue iterating or terminate.
+Here's how it works:
+Initialization: The boolean flag variable is declared and initialized to either true or false before the while loop begins. This initial value determines whether the loop will execute at least once.
+Loop Condition: The while loop's condition directly references the flag variable. The loop continues to execute as long as the flag variable evaluates to true (or false, depending on how the condition is structured, e.g., while (!flag)).
+Modification: Inside the loop's body, the value of the flag variable is modified based on certain conditions or events. When a specific condition is met, the flag is changed to the opposite boolean value, causing the loop's condition to become false (or true), and thus terminating the loop.
+
+
+QUESTION:
+Flag-Controlled Loop: Item Search 
+
+Design a program that prompts the user to enter the name of an item. The program will compare the input against a fixed set of hardcoded item names and prices using a flag-controlled while loop. If the item is found, display its price. If not, display a message that the item was not found. 
+
+Write your code below using Java-style comments. 
+
+
+/*
+ * Program Name: Scan2.java
+ * Author: [Student Name]
+ * Date: [Submission Date]
+ * Course: Write Course Name
+ * Instructor: Prof. Name
+ *
+ * Description:
+ * -------------------------------------------------------------
+ * This program demonstrates the use of a flag-controlled while loop
+ * to search for an item in a predefined set of hardcoded item names
+ * and prices. The user is prompted to enter an item name, and the
+ * program checks if it matches any of the available items.
+ * 
+ * If the item is found, its price is displayed.
+ * If not found, a "not found" message is shown.
+ * 
+ * The loop uses a boolean flag variable 'found' to control its
+ * termination, ensuring that the loop stops after one complete search.
+ * -------------------------------------------------------------
+ */
+
+import java.util.Scanner;
+
+public class Scan2 {
+    public static void main(String[] args) {
+        // Step 1: Create Scanner object for input
+        Scanner input = new Scanner(System.in);
+
+        // Step 2: Declare variables for input and loop control
+        String item;
+        boolean found = false;  // flag variable to indicate search result
+
+        // Step 3: Prompt the user for input
+        System.out.print("Enter name of item for search: ");
+        item = input.nextLine();
+
+        // Step 4: Hardcoded items and their prices
+        String item1 = "hammer";
+        String item2 = "saw";
+        String item3 = "shovel";
+        double price1 = 9.95, price2 = 20.15, price3 = 35.40;
+
+        // Step 5: Begin flag-controlled while loop
+        // The loop will execute until 'found' becomes true
+        while (!found) {
+
+            // Step 6: Compare user input with each item using equalsIgnoreCase()
+            if (item.equalsIgnoreCase(item1)) {
+                System.out.println("The item " + item + " costs $" + price1);
+                found = true;  // item found, stop the loop
+            } 
+            else if (item.equalsIgnoreCase(item2)) {
+                System.out.println(" The item " + item + " costs $" + price2);
+                found = true;
+            } 
+            else if (item.equalsIgnoreCase(item3)) {
+                System.out.println(" The item " + item + " costs $" + price3);
+                found = true;
+            } 
+            else {
+                // Step 7: Item does not match any of the listed items
+                System.out.println(" The item \"" + item + "\" was not found.");
+                found = true; // terminate loop after unsuccessful search
+            }
+        }
+
+        // Step 8: Close Scanner object
+        input.close();
+    }
+}
+
+/*
+ * -------------------------------------------------------------
+ *                 TEST CASES & OUTPUT VERIFICATION
+ * -------------------------------------------------------------
+ *
+ *  TEST CASE 1 – ITEM FOUND
+ * Input:
+ *   Enter name of item for search: hammer
+ * Output:
+ *    The item hammer costs $9.95
+ *
+ *  TEST CASE 2 – ITEM FOUND (different capitalization)
+ * Input:
+ *   Enter name of item for search: SAW
+ * Output:
+ *    The item SAW costs $20.15
+ *
+ * TEST CASE 3 – ITEM FOUND
+ * Input:
+ *   Enter name of item for search: shovel
+ * Output:
+ *   The item shovel costs $35.4
+ *
+ *  TEST CASE 4 – ITEM NOT FOUND
+ * Input:
+ *   Enter name of item for search: wrench
+ * Output:
+ *   The item "wrench" was not found.
+ *
+ *  TEST CASE 5 – EMPTY INPUT
+ * Input:
+ *   Enter name of item for search:
+ * Output:
+ *    The item "" was not found.
+ *
+ * -------------------------------------------------------------
+ * END OF FILE
+ * -------------------------------------------------------------
+ */
+
