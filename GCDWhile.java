@@ -24,27 +24,37 @@
 import java.util.Scanner;
 
 public class GCDWhile {
+    // Step 1: Create Scanner object for input
     public static Scanner input = new Scanner(System.in);
+    // Step 2: Declare function calculateGCD for GCD calculation
     public static int calculateGCD(int a, int b) {
+        // Step 6: Begin flag-controlled while loop
+        // The loop while execute until a is equal to zero
         while (a != 0) {
+           // Step 7: Create temporary variable to hold original value of variable a
            int temp = a;
+           // Step 8: Set variable a to the remainder of b and a
            a = b % a;
+           // Step 9: Set variable b to the original value of variable a
            b = temp;
         }
+        // Step 10: Return value of variable b
         return b;
     }
-
+    
     public static void main(String[] args) {
+        // Step 3: Declare int variables a and b
         int a;
         int b;
-
+        // Step 4: Prompt input for int variables a and b
         System.out.println("Enter A");
         a = input.nextInt();
         System.out.println("Enter B");
         b = input.nextInt();
-
+        // Step 5: Call and Output the return value of calculateGCD
         System.out.println("   ");
         System.out.println("The GCD is: " + calculateGCD(a, b));
+        input.close();
     }
 }
 

@@ -1,3 +1,26 @@
+/*
+ * Program Name: Scan2.java
+ * Author(s): Malcolm Williams, Ethan Vaughn 
+ * Date: 11/4/2025
+ * Course: Computer Science I
+ * Instructor: Suraj Maraboina
+ *
+ * Description:
+ * -------------------------------------------------------------
+ * This program demonstrates the use of a flag-controlled 
+ * do while loop to search for the Greatest Common Divisor (GCD)
+ * of two numbers using the Euclidian Method. The user is
+ * prompted to enter two numbers (Number A and B), and
+ * then the GCD is calculated.
+ * 
+ * If the numbers have a GCD, an integer will be outputted.
+ * 
+ * 
+ * The loop executes once and then uses a comparision flag by checking if Number A is not equal to zero. It is used to control its
+ * termination, ensuring that the loop does not begin or stops after the GCD is found and Number A is equal to zero.
+ * -------------------------------------------------------------
+ */
+
 import java.util.Scanner;
 
 public class GCDDoWhile {
@@ -22,5 +45,51 @@ public class GCDDoWhile {
 
         System.out.println("   ");
         System.out.println("The GCD is: " + calculateGCD(a, b));
+        input.close();
     }
 }
+
+/*
+ * -------------------------------------------------------------
+ *                 TEST CASES & OUTPUT VERIFICATION
+ * -------------------------------------------------------------
+ *
+ * TEST CASE 1 – ITEM FOUND
+ * Input:
+ *    11, 121
+ * Output:
+ *    The GCD is: 11
+ *
+ * TEST CASE 2 – ITEM FOUND
+ * Input:
+ *    12, 36
+ * Output:
+ *    The GCD is: 12
+ * 
+ * TEST CASE 3 – ITEM FOUND
+ * Input:
+ *    4, 2
+ * Output:
+ *    The GCD is: 2
+ * 
+ * TEST CASE 4 – ITEM FOUND
+ * Input:
+ *    13, 3
+ * Output:
+ *    The GCD is: 1
+ * 
+ * TEST CASE 5 – ITEM FOUND
+ * Input:
+ *    1984, 17
+ * Output:
+ *    The GCD is: 1
+ * 
+ * TEST CASE 6 – ITEM FOUND
+ * Input:
+ *    216, 1024
+ * Output:
+ *    The GCD is: 8
+ * -------------------------------------------------------------
+ * END OF FILE
+ * -------------------------------------------------------------
+ */
